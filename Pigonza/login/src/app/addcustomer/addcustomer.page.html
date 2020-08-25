@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Añadir Terreno</ion-title>
+      <ion-buttons slot="primary">
+        <ion-back-button text="Back" icon="" color="tertiary" fill="outline"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating"> Nombre del Terreno </ion-label>
+      <ion-input type="text" [(ngModel)]="name_customer"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating"> Description </ion-label>
+      <ion-textarea [(ngModel)]="desc_customer"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" style="color: rgb(0, 0, 0);" >Uso</ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="cultivo">Cultivo</ion-select-option>
+        <ion-select-option value="ganadero">Ganado</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-button expand="block" padding color="tertiary" *ngIf="!id" (click)="createdProses()" fill="outline">Ingresar</ion-button>
+    <ion-button expand="block" padding color="tertiary" *ngIf="id>=1" (click)="updateProses()" fill="outline">Actualizar</ion-button>
+  
+  </ion-content>
+  
